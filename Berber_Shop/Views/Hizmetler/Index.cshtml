@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Hizmetler";
+    var hizmetler = Model as List<string>;
+}
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Hizmetlerimiz</h1>
+    <div class="row">
+        @foreach (var hizmet in hizmetler)
+        {
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">@hizmet</h5>
+                        <p class="card-text">
+                            @hizmet hakkında daha fazla bilgi için aşağıdaki düğmeyi tıklayın.
+                        </p>
+                        <a href="/Hizmetler/Detay?hizmet=@hizmet" class="btn btn-primary">Detay</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
